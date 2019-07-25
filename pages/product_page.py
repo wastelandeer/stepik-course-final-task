@@ -25,3 +25,11 @@ class ProductPage(BasePage):
 		basket_total = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL).text
 		#basket_total = '456'
 		assert price == basket_total, f'Prices mismatch. Item price: {price}, basket total price: {basket_total}.'
+
+	def should_not_be_success_message(self):
+		assert self.is_not_element_present(*ProductPageLocators.BASKET_ITEM_NAME),\
+			'Success message is presented, but should not be.'
+
+	def should_disappear(self):
+		assert self.is_disappeared(*ProductPageLocators.BASKET_ITEM_NAME),\
+			'Success message didn`t disappear, but it should.'
