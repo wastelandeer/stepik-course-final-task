@@ -20,4 +20,10 @@ class ProductPageLocators(object):
 class BasePageLocators(object):
 	LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
 	LOGIN_LINK_INVALID = (By.CSS_SELECTOR, '#login_link_inc')
+	CART_LINK = (By.CSS_SELECTOR, 'span.btn-group > a.btn-default')
+
+class CartPageLocators(object):
+	EMPTY_CART_MESSAGE = (By.CSS_SELECTOR, 'div.content > div#content_inner > p')
+	CART_ITEMS = (By.CSS_SELECTOR, 'div.content > div#content_inner > div')
+		
 				
